@@ -1,0 +1,131 @@
+<div class="malumot">
+    <form name="mal" action="/auth/register" method="POST">
+
+        <div class="malumotlar_o_l">
+            <p>Ism Familyangizni va Sharf kiriting</p>
+            <input type="text" placeholder="F.I.Sh">
+
+            <p>Kursizni kiriting</p>
+
+            <div class="kurs">
+                <label>
+                    <input type="radio" name='kurs' id="bir" value="1">
+                    <span>1</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='kurs' id="ikki" value="1">
+                    <span>2</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='kurs' id="uch" value="1">
+                    <span>3</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='kurs' id="tort" value="1">
+                    <span>4</span>
+                </label>
+            </div>
+
+
+            <p>Nomeringizni kiriting</p>
+            <input type="number" placeholder="+998 ___ __ __">
+
+            <p>Ijtimoiy holati</p>
+            <select class="select holat" name="holati">
+                <option value="">....</option>
+
+                <option value="chy">Chin yetim</option>
+
+                <option value="yy">Yarim yetim</option>
+
+                <option value="ij">Ijtimoiy</option>
+            </select>
+
+
+            <p>Nogironlik guruhingizni tanlang</p>
+            <select class="select" name="" id="">
+                <option value="">.....</option>
+                <option value="yoq">Yo'q</option>
+                <option value="bir_g">1-guruh</option>
+                <option value="ikki_g">2-guruh</option>
+                <option value="uch_g">3-guruh</option>
+            </select>
+
+
+            <div class="ptich">
+                <p>Ma'lumotlaringizni to'liq kiritib bo'ldingizmi</p>
+                <input name="roziman" type="checkbox" onclick="sub()">
+            </div>
+
+        </div>
+
+        <div class="malumotlar_o_r">
+            <p>Doimiy yashash manzili</p>
+            <input type="text" placeholder="Doimiy yashash manzili">
+
+            <p>Jinsizni tanlang</p>
+            <div class="kurs">
+                <label>
+                    <input type="radio" name='jins' id="Erkak" value="1">
+                    <span>Erkak</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='jins' id="Ayol" value="1">
+                    <span>Ayol</span>
+                </label>
+
+            </div>
+
+            <p>Rasmiz yuklang</p>
+            <div class="upload">
+                <img src="image/profile.png" width="100" height="100" alt="">
+                <div class="round">
+                    <input type="file">
+                    <i class="fa fa-camera" style="color:#fff"></i>
+                </div>
+            </div>
+
+            <p>Fakultet tanlang</p>
+            <select class="select" name="Fakultet">
+                <option value="">....</option>
+
+                <option value="KIF">Kompyuter injiniringi: kompyuter injiniringi</option>
+
+                <option value="At">Kompyuter injiniringi: AT-Servis</option>
+
+                <option value="MT">Kompyuter injiniringi: multimedia texnologiyalari</option>
+
+                <option value="DIF">Dasturiy injiniring</option>
+
+                <option value="AX">Axborot xavfsizligi (sohalar bo`yicha)</option>
+
+                <option value="TEL">Telekommunikatsiya texnologiyalari</option>
+
+                <option value="KUT">Kutubxona-axborot faoliyati (faoliyat turlari bo`yicha)</option>
+            </select>
+
+            <p>Emailigizni kiriting</p>
+            <input type="email" id="mail" name="email">
+
+
+
+            <br> <br>
+
+
+            <input name="tugma" type="submit">
+        </div>
+
+    </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <a class="w-100 btn btn-lg btn-danger" href="/auth/logout">logout</a>
+            </div>
+        </div>
+    </div>
+
+</div>

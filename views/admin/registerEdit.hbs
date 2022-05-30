@@ -1,0 +1,117 @@
+<div class="malumot">
+    <form name="mal" action="/create/edit/{{apply.id}}" method="POST" enctype="multipart/form-data">
+
+        <div class="malumotlar_o_l">
+            <p>Ism Familyangizni va Sharf kiriting</p>
+            <input type="text" placeholder="F.I.Sh" name="name" value="{{apply.name}}">
+
+            <p>Kursizni kiriting</p>
+
+            <div class="kurs">
+                <label>
+                    <input type="radio" name='course' id="bir" value="{{apply.course}}">
+                    <span>1</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='course' id="ikki" value="{{apply.course}}">
+                    <span>2</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='course' id="uch" value="{{apply.course}}">
+                    <span>3</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='course' id="tort" value="{{apply.course}}">
+                    <span>4</span>
+                </label>
+            </div>
+
+
+            <p>Nomeringizni kiriting</p>
+            <input type="number" placeholder="+998 ___ __ __" name="number" value="{{apply.number}}">
+
+            <p>Ijtimoiy holati</p>
+            <select class="select holat" name="situation">
+                <option value="{{apply.situation}}">....</option>
+
+                <option value="{{apply.situation}}">Chin yetim</option>
+
+                <option value="{{apply.situation}}">Yarim yetim</option>
+
+                <option value="{{apply.situation}}">Ijtimoiy</option>
+            </select>
+
+
+            <p>Nogironlik guruhingizni tanlang</p>
+            <select class="select" name="disabled" id="">
+                <option value="{{apply.disabled}}">.....</option>
+                <option value="{{apply.disabled}}">Yo'q</option>
+                <option value="{{apply.disabled}}">1-guruh</option>
+                <option value="{{apply.disabled}}">2-guruh</option>
+                <option value="{{apply.disabled}}">3-guruh</option>
+            </select>
+
+
+            <div class="ptich">
+                <p>Ma'lumotlaringizni to'liq kiritib bo'ldingizmi</p>
+                <input name="agree" type="checkbox" value="{{apply.agree}}">
+            </div>
+
+        </div>
+
+        <div class="malumotlar_o_r">
+            <p>Doimiy yashash manzili</p>
+            <input type="text" placeholder="Doimiy yashash manzili" name="address" value="{{apply.address}}">
+
+            <p>Jinsizni tanlang</p>
+            <div class="kurs">
+                <label value="{{apply.gender}}">
+                    <input type="radio" name='gender' id="Erkak">
+                    <span>Erkak</span>
+                </label>
+
+                <label>
+                    <input type="radio" name='gender' id="Ayol">
+                    <span>Ayol</span>
+                </label>
+
+            </div>
+
+            <p>Rasmiz yuklang</p>
+            <div class="upload">
+                <img src="/image/profile.png" width="100" height="100" alt="">
+                <div class="round">
+                    <input type="file" name="profileImg" value="{{apply.profileImg}}">
+                    <i class="fa fa-camera" style="color:#fff"></i>
+                </div>
+            </div>
+
+            <p>Fakultet tanlang</p>
+            <select class="select" name="faculty">
+                <option value="">....</option>
+
+                <option value="{{apply.faculty}}">Kompyuter injiniringi: kompyuter injiniringi</option>
+
+                <option value="{{apply.faculty}}">Kompyuter injiniringi: AT-Servis</option>
+
+                <option value="{{apply.faculty}}">Kompyuter injiniringi: multimedia texnologiyalari</option>
+
+                <option value="{{apply.faculty}}">Dasturiy injiniring</option>
+
+                <option value="{{apply.faculty}}">Axborot xavfsizligi (sohalar bo`yicha)</option>
+
+                <option value="{{apply.faculty}}">Telekommunikatsiya texnologiyalari</option>
+
+                <option value="{{apply.faculty}}">Kutubxona-axborot faoliyati (faoliyat turlari bo`yicha)</option>
+            </select>
+
+            <p>Emailigizni kiriting</p>
+            <input type="email" id="mail" name="email" value="{{apply.email}}">
+            <br> <br>
+            <input name="tugma" type="submit">
+        </div>
+    </form>
+</div>

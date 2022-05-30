@@ -23,7 +23,7 @@ const formSchema = new Schema({
     type: String,
   },
   gender: {
-    type: Boolean,
+    type: String,
   },
   profileImg: {
     type: String,
@@ -33,7 +33,6 @@ const formSchema = new Schema({
   },
   email: {
     type: String,
-    required: true,
   },
 });
 

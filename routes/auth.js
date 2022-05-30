@@ -4,7 +4,8 @@ const Auth = require("../models/Auth");
 const bcrypt = require("bcryptjs");
 const AuthRegister = require("../models/AuthRegister");
 const flash = require("connect-flash");
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
+const fileUpload = require('../middleware/fileUpload')
 
 
 // ======================================================== Login and Logout ==========================================
@@ -34,12 +35,12 @@ router.post("/login", async (req, res) => {
 
       if (areSame) {
         req.session.isAuth = true;
-        res.redirect("/auth/register");
+        res.redirect("/create");
       } else {
         res.redirect("/auth/login");
       }
     } else {
-      res.redirect("/auth/register");
+      res.redirect("/create");
     }
   } catch (error) {
     console.log(error);
@@ -77,66 +78,66 @@ router.post("/registratsiyaForLogin", async (req, res) => {
 
 // ===================================================== register ===========================================
 
-router.get(
-  "/register",
-  auth, (req, res, next) => {
-    res.render("auth/register", {
-      title: "Register",
-      layout: "layout.hbs",
-    });
-  }
-);
+// router.get(
+//   "/register",
+//   auth, (req, res, next) => {
+//     res.render("auth/register", {
+//       title: "Register",
+//       layout: "layout.hbs",
+//     });
+//   }
+// );
 
-router.post(
-  "/register",
-  auth, async (req, res) => {
-    try {
-      const {
-        name,
-        course,
-        number,
-        situation,
-        disabled,
-        agree,
-        address,
-        gender,
-        profileImg,
-        faculty,
-        email,
-      } = req.body;
+// router.post(
+//   "/register",
+//   auth,fileUpload.single('profileImg'), async (req, res) => {
+//     try {
+//       const {
+//         name,
+//         course,
+//         number,
+//         situation,
+//         disabled,
+//         agree,
+//         address,
+//         gender,
+//         faculty,
+//         email,
+//       } = req.body;
+//       req.file ? profileImg = req.file.filename : profileImg = ""
 
-      const candidate = await AuthRegister.findOne({
-        email,
-      });
+//       const candidate = await AuthRegister.findOne({
+//         email,
+//       });
 
-      if (candidate) {
-        req.flash("registerError", "Login is busy");
-        res.redirect("/");
-      } else {
-        const authRegister = new AuthRegister({
-          name,
-          course,
-          number,
-          situation,
-          disabled,
-          agree,
-          address,
-          gender,
-          profileImg,
-          faculty,
-          email,
-        });
+//       if (candidate) {
+//         req.flash("registerError", "Login is busy");
+//         res.redirect("/");
+//       } else {
+//         const authRegister = new AuthRegister({
+//           name,
+//           course,
+//           number,
+//           situation,
+//           disabled,
+//           agree,
+//           address,
+//           gender,
+//           profileImg,
+//           faculty,
+//           email,
+//         });
 
-        await authRegister.save();
-        req.flash("success", "Admin is registreted successfull");
-        res.redirect("/");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+//         await authRegister.save();
+//         req.flash("success", "Admin is registreted successfull");
+//         res.redirect("/");
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
 
-    // const authRegister = new AuthRegister(req.body);
-  }
-);
+//     // const authRegister = new AuthRegister(req.body);
+//   }
+// );
 
 module.exports = router;

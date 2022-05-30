@@ -11,7 +11,10 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const variables = require("./middleware/virables");
+const adminRouter = require('./routes/admin')
 const flash = require('connect-flash')
+// const applyRouter = require('./routes/apply')
+const createRouter = require('./routes/create')
 
 const app = express();
 
@@ -61,6 +64,8 @@ app.use(variables)
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+app.use('/admin', adminRouter)
+app.use('/create', createRouter)
 
 app.use("/auth", express.static(path.join(__dirname, "public")));
 app.use("/auth:any", express.static(path.join(__dirname, "public")));

@@ -39,7 +39,6 @@ router.post("/", auth, fileUpload.single("profileImg"), async (req, res) => {
     email,
   } = req.body;
   req.file ? (profileImg = req.file.filename) : (profileImg = "");
-  console.log(req.body);
 
   const candidate = new AuthRegister({
     name,

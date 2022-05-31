@@ -81,6 +81,7 @@ router.post("/edit/:id", fileUpload.single("profileImg"), async (req, res) => {
 
   await AuthRegister.findByIdAndUpdate(req.params.id, apply);
   res.redirect("/create/view");
+  console.log(req.body);
 });
 
 // =================================================== delete

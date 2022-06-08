@@ -4,6 +4,7 @@ const auth = require("../middleware/auth");
 const fileUpload = require("../middleware/fileUpload");
 const AuthRegister = require("../models/AuthRegister");
 const toDelete = require("../middleware/toDelete");
+const nodehbs = require("nodemailer-express-handlebars");
 
 router.get("/view", auth, async (req, res) => {
   const apply = await AuthRegister.find();
@@ -85,10 +86,39 @@ router.post("/edit/:id", fileUpload.single("profileImg"), async (req, res) => {
 // =================================================== delete
 
 router.get("/delete/:id", async (req, res) => {
-  const {profileImg} = await AuthRegister.findById(req.params.id);
+  const { profileImg } = await AuthRegister.findById(req.params.id);
   toDelete(profileImg);
   await AuthRegister.findByIdAndDelete(req.params.id);
   res.redirect("/create/view");
+});
+// =============================================== send mail
+
+router.get("/sendMail/:id", async (req, res) => {
+  const email = await AuthRegister.findById(req.params.id);
+  // const { email } = req.body;
+  // const apply = await AuthRegister.findOne(email);
+  res.render("admin/sendMail", {
+    email,
+    title: "Email",
+    layout: "admin",
+  });
+});
+
+router.post("/sendMail/:id", async (req, res) => {
+  const email = await AuthRegister.findOne(email);
+  transporter.use("compile", hbs(options));
+  //send mail with options
+  var mail = {
+    from: "from@domain.com",
+    to: email,
+    subject: "Test",
+    template: "email",
+    context: {
+      name: "Name",
+    },
+  };
+  transporter.sendMail(mail);
+  res.redirect('/create/view')
 });
 
 module.exports = router;

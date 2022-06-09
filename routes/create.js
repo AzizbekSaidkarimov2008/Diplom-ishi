@@ -105,8 +105,40 @@ router.get("/sendMail/:id", async (req, res) => {
 });
 
 router.post("/sendMail/:id", async (req, res) => {
-  const email = await AuthRegister.findOne(email);
-  console.log(req.body);
+  const {email} = req.body
+  const nodemail = await AuthRegister.findOne();
+  // const mailjet = require ('node-mailjet')
+  // .connect('****************************1234', '****************************abcd')
+  // const request = mailjet
+  // .post("send", {'version': 'v3.1'})
+  // .request({
+  //   "Messages":[
+  //     {
+  //       "From": {
+  //         "Email": "saidkarimov014@gmail.com",
+  //         "Name": "Azizbek"
+  //       },
+  //       "To": [
+  //         {
+  //           "Email": "saidkarimov014@gmail.com",
+  //           "Name": "Azizbek"
+  //         }
+  //       ],
+  //       "Subject": "Greetings from Mailjet.",
+  //       "TextPart": "My first Mailjet email",
+  //       "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+  //       "CustomID": "AppGettingStartedTest"
+  //     }
+  //   ]
+  // })
+  // request
+  //   .then((result) => {
+  //     console.log(result.body)
+  //   })
+  //   .catch((err) => {
+  //     console.log(err.statusCode)
+  //   })
+
   res.redirect('/create/view')
 });
 

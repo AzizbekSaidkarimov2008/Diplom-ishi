@@ -106,18 +106,7 @@ router.get("/sendMail/:id", async (req, res) => {
 
 router.post("/sendMail/:id", async (req, res) => {
   const email = await AuthRegister.findOne(email);
-  transporter.use("compile", hbs(options));
-  //send mail with options
-  var mail = {
-    from: "from@domain.com",
-    to: email,
-    subject: "Test",
-    template: "email",
-    context: {
-      name: "Name",
-    },
-  };
-  transporter.sendMail(mail);
+  console.log(req.body);
   res.redirect('/create/view')
 });
 

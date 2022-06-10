@@ -105,8 +105,8 @@ router.get("/sendMail/:id", async (req, res) => {
 });
 
 router.post("/sendMail/:id", async (req, res) => {
-  const {email} = req.body
-  const nodemail = await AuthRegister.findOne();
+  const { email } = await AuthRegister.findById(req.params.id);
+  // const nodemail = await AuthRegister.findOne();
   // const mailjet = require ('node-mailjet')
   // .connect('****************************1234', '****************************abcd')
   // const request = mailjet
@@ -139,7 +139,7 @@ router.post("/sendMail/:id", async (req, res) => {
   //     console.log(err.statusCode)
   //   })
 
-  res.redirect('/create/view')
+  res.redirect("/create/view");
 });
 
 module.exports = router;

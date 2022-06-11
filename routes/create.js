@@ -5,6 +5,7 @@ const fileUpload = require("../middleware/fileUpload");
 const AuthRegister = require("../models/AuthRegister");
 const toDelete = require("../middleware/toDelete");
 const nodehbs = require("nodemailer-express-handlebars");
+const nodemailer = require("nodemailer");
 
 router.get("/view", auth, async (req, res) => {
   const apply = await AuthRegister.find();
@@ -105,41 +106,37 @@ router.get("/sendMail/:id", async (req, res) => {
 });
 
 router.post("/sendMail/:id", async (req, res) => {
-  const { email } = await AuthRegister.findById(req.params.id);
-  // const nodemail = await AuthRegister.findOne();
-  // const mailjet = require ('node-mailjet')
-  // .connect('****************************1234', '****************************abcd')
-  // const request = mailjet
-  // .post("send", {'version': 'v3.1'})
-  // .request({
-  //   "Messages":[
-  //     {
-  //       "From": {
-  //         "Email": "saidkarimov014@gmail.com",
-  //         "Name": "Azizbek"
-  //       },
-  //       "To": [
-  //         {
-  //           "Email": "saidkarimov014@gmail.com",
-  //           "Name": "Azizbek"
-  //         }
-  //       ],
-  //       "Subject": "Greetings from Mailjet.",
-  //       "TextPart": "My first Mailjet email",
-  //       "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-  //       "CustomID": "AppGettingStartedTest"
-  //     }
-  //   ]
-  // })
-  // request
-  //   .then((result) => {
-  //     console.log(result.body)
-  //   })
-  //   .catch((err) => {
-  //     console.log(err.statusCode)
-  //   })
+  // const { email } = await AuthRegister.findById(req.params.id);
+  const from = req.body.from;
+  const to = req.body.to;
+  const subject = req.body.subject;
+  const message = req.body.message;
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: 'saidkarimov014@gmail.com',
+      pass: "jyqyqegkwbkalssv",
+    },
+  });
+
+  const mailOptions = {
+    from: from,
+    to: to,
+    subject: subject,
+    text: message,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email Sent: " + info.response);
+    }
+    response.redirect("/create/view");
+  });
 
   res.redirect("/create/view");
+  console.log(req.body);
 });
 
 module.exports = router;

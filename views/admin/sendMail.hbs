@@ -6,13 +6,22 @@
 
 <form action="/create/sendMail/email.id" method="post">
   From:
-  <input type="email" name="from" id="from" /><br /><br />
+  <input type="email" name="from" id="from" class="email" required /><br /><br
+  />
   To:
-  <input type="email" name="to" id="to" value="{{email.email}}" /><br /><br />
+  <input
+    type="email"
+    name="to"
+    id="to"
+    value="{{email.email}}"
+    class="email"
+    required
+  /><br /><br />
   Subject:
-  <input type="text" name="subject" id="subject" /><br /><br />
+  <input type="text" name="subject" id="subject" class="subject" required /><br
+  /><br />
   Message:<br />
-  <textarea id="message" name="message"></textarea>
+  <textarea id="message" name="message" class="message" required></textarea>
   <br /><br />
-  <input type="submit" value="Send" />
+  <button type="submit" class="submit">Send</button>
 </form>

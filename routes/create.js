@@ -96,8 +96,6 @@ router.get("/delete/:id", async (req, res) => {
 
 router.get("/sendMail/:id", async (req, res) => {
   const email = await AuthRegister.findById(req.params.id);
-  // const { email } = req.body;
-  // const apply = await AuthRegister.findOne(email);
   res.render("admin/sendMail", {
     email,
     title: "Email",
@@ -106,7 +104,6 @@ router.get("/sendMail/:id", async (req, res) => {
 });
 
 router.post("/sendMail/:id", async (req, res) => {
-  // const { email } = await AuthRegister.findById(req.params.id);
   const from = req.body.from;
   const to = req.body.to;
   const subject = req.body.subject;

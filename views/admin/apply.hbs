@@ -1,58 +1,98 @@
 {{#if apply.length}}
-<div class="row">
-  {{#each apply}}
+  <div class="row">
+    {{#each apply}}
 
-  <div class="col-12 col-sm-7 col-md-5 d-flex align-items-stretch flex-column">
-    <div class="card bg-light d-flex flex-fill">
-      <div class="card-header text-muted border-bottom-0"></div>
-      <div class="card-body pt-0">
-        <div class="row">
-          <div class="col-7">
-            <h4 class="lead"><b>{{name}}</b></h4>
-            <p class="text-muted text-sm"><b>Kurs: </b> {{course}} </p>
-            <ul class="ml-4 mb-0 fa-ul text-muted">
-              <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> tel: {{number}}</li>
-              <li class="small"><span class="fa-li"><i class="fa-solid fa-people-robbery"></i></span>holati:
-                {{situation}}</li>
-              <li class="small"><span class="fa-li"><img src="/image/disabled.png" alt="" width="14"
-                    height="14"></span>Nogironlik: {{disabled}}
-              </li>
-              <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> yashash
-                manzili:{{address}}</li>
-              <li class="small"><span class="fa-li"><i class="fa-solid fa-user"></i></span> Jinsi: {{gender}}</li>
-              <li class="small"><span class="fa-li"><i class="fa-solid fa-building-columns"></i></span> Fakultet:
-                {{faculty}}
-              </li>
-              <li class="small"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> email: {{email}}</li>
-              <li class="small"><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> roziligi: {{agree}}
-              </li>
-            </ul>
+      <div
+        class="col-12 col-sm-7 col-md-5 d-flex align-items-stretch flex-column"
+      >
+        <div class="card bg-light d-flex flex-fill">
+          <div class="card-header text-muted border-bottom-0"></div>
+          <div class="card-body pt-0">
+            <div class="row">
+              <div class="col-7">
+                <h4 class="lead"><b>{{name}}</b></h4>
+                <p class="text-muted text-sm"><b>Kurs: </b> {{course}} </p>
+                <ul class="ml-4 mb-0 fa-ul text-muted">
+                  <li class="small"><span class="fa-li"><i
+                        class="fas fa-lg fa-phone"
+                      ></i></span>
+                    tel:
+                    {{number}}</li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fa-solid fa-people-robbery"
+                      ></i></span>holati:
+                    {{situation}}</li>
+                  <li class="small"><span class="fa-li"><img
+                        src="/image/disabled.png"
+                        alt=""
+                        width="14"
+                        height="14"
+                      /></span>Nogironlik:
+                    {{disabled}}
+                  </li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fas fa-lg fa-building"
+                      ></i></span>
+                    yashash manzili:{{address}}</li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fa-solid fa-user"
+                      ></i></span>
+                    Jinsi:
+                    {{gender}}</li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fa-solid fa-building-columns"
+                      ></i></span>
+                    Fakultet:
+                    {{faculty}}
+                  </li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fa-solid fa-envelope"
+                      ></i></span>
+                    email:
+                    {{email}}</li>
+                  <li class="small"><span class="fa-li"><i
+                        class="fa-solid fa-circle-check"
+                      ></i></span>
+                    roziligi:
+                    {{agree}}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-5 text-center">
+                <img
+                  src="/image/{{profileImg}}"
+                  alt="{{profileImg}}"
+                  width="139"
+                  height="139"
+                  style="border-radius: 50%;"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-5 text-center">
-            <img src="/image/{{profileImg}}" alt="{{profileImg}}" width="139" height="139" style="border-radius: 50%;">
+          <div class="card-footer">
+            <div class="text-right">
+              <a href="/create/sendMail/{{id}}" class="btn btn-sm bg-teal">
+                <i class="fas fa-envelope"></i>
+                Send Mail
+              </a>
+              <a href="/create/edit/{{id}}" class="btn btn-primary btn-sm">
+                {{! <i class="fas fa-comments"></i> }}
+                <i class="fas fa-pencil-alt">
+                </i>
+                Edit
+              </a>
+              <a href="/create/delete/{{id}}" class="btn btn-sm btn-danger">
+                <i class="fas fa-trash">
+                </i>
+                Delete
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="card-footer">
-        <div class="text-right">
-          <a href="/create/sendMail/{{id}}" class="btn btn-sm bg-teal">
-            {{!-- <i class="fas fa-comments"></i> --}}
-            Send Mail
-          </a>
-          <a href="/create/edit/{{id}}" class="btn btn-sm bg-teal">
-            {{!-- <i class="fas fa-comments"></i> --}}
-            Edit
-          </a>
-          <a href="/create/delete/{{id}}" class="btn btn-sm btn-primary">
-            <i class="fas fa-user"></i> Delete
-          </a>
-        </div>
-      </div>
-    </div>
+
+    {{/each}}
   </div>
-
-  {{/each}}
-</div>
 {{else}}
-<h1>no nothing</h1>
+  <h1>no nothing</h1>
 {{/if}}

@@ -342,12 +342,20 @@ html {
   margin: 0px 17px 30px 17px;
 }
 
+.containers .gallery .gallery__in .umumiy_r .yotoqxonaImg{
+  height: 230px !important;
+}
+
 .containers .gallery .gallery__in .kutubxona,
 .containers .gallery .gallery__in .sport,
 .containers .gallery .gallery__in .damolish,
 .containers .gallery .gallery__in .yuvinish,
 .containers .gallery .gallery__in .oshxona {
   display: none;
+}
+
+.containers .gallery .gallery__in .damolish .yotoqxonaImg{
+  height: 230px !important;
 }
 
 .containers .footer {

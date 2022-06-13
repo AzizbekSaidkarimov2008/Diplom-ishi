@@ -343,7 +343,7 @@ html {
 }
 
 .containers .gallery .gallery__in .umumiy_r .UmumiyImg{
-  height: 230px !important;
+  height: 287px !important;
 }
 
 .containers .gallery .gallery__in .kutubxona,
@@ -356,6 +356,10 @@ html {
 
 .containers .gallery .gallery__in .damolish .yotoqxonaImg{
   height: 230px !important;
+}
+
+.containers .gallery .gallery__in .damolish .yotoqxonaImg2{
+  height: 287px !important;
 }
 
 .containers .footer {

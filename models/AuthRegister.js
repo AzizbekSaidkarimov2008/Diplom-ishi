@@ -34,6 +34,9 @@ const formSchema = new Schema({
   email: {
     type: String,
   },
+  room: {
+    type: String,
+  },
 });
 
 module.exports = model("register", formSchema);

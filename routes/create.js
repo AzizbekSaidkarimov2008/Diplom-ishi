@@ -18,6 +18,15 @@ router.get("/view", auth, async (req, res) => {
   });
 });
 
+router.get('/viewRooms', auth, async (req,res)=>{
+  const rooms = await AuthRegister.find()
+  res.render('admin/room', {
+    rooms,
+    layout: 'admin',
+    ActiveRoom: true,
+  })
+})
+
 // ================================================= create
 
 router.get("/", auth, (req, res, next) => {
@@ -39,6 +48,7 @@ router.post("/", auth, fileUpload.single("profileImg"), async (req, res) => {
     gender,
     faculty,
     email,
+    room
   } = req.body;
   req.file ? (profileImg = req.file.filename) : (profileImg = "");
 
@@ -54,6 +64,7 @@ router.post("/", auth, fileUpload.single("profileImg"), async (req, res) => {
     faculty,
     email,
     profileImg,
+    room
   });
   await candidate.save();
   res.redirect("/");

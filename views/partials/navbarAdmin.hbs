@@ -53,7 +53,7 @@
     <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" data-target="#navbar-search1" href="#" role="button">
+            <a class="nav-link nav-linkIcon" data-widget="navbar-search" data-target="#navbar-search1" href="#" role="button">
                 <i class="fas fa-search"></i>
             </a>
             <div class="navbar-search-block" id="navbar-search1" style="display: none;">
@@ -65,7 +65,7 @@
                             <button class="btn btn-navbar" type="submit">
                                 <i class="fas fa-search"></i>
                             </button>
-                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                            <button class="btn btn-navbar nav-linkClose" type="button" data-widget="navbar-search">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -84,14 +84,15 @@
 </nav>
 
 <script>
-    let iconSearch = document.querySelector('.fa-search')
+    let iconSearch = document.querySelector('.nav-linkIcon')
     let noneBtn = document.querySelector('.click-btn-danger')
-    let closeBtn = document.querySelector('.fa-times')
+    let closeBtn = document.querySelector('.nav-linkClose')
 
     iconSearch.addEventListener('click', ()=>{
-        noneBtn.style.display = 'none'
+        noneBtn.style.opacity = 0
+        noneBtn.style.transition = .5
     })
     closeBtn.addEventListener('click',()=>{
-        noneBtn.style.display = 'block'
+        noneBtn.style.opacity = 1
     })
 </script>

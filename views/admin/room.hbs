@@ -1,0 +1,31 @@
+{{#if rooms.length}}
+  <div class="content-header">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-hover text-nowrap">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Talabaning ismi</th>
+            <th>Talabaning xonasi</th>
+          </tr>
+        </thead>
+        {{#each rooms}}
+          <tbody>
+            <tr>
+              <td>{{id}}</td>
+              <td>{{name}}</td>
+              <td>{{room}}</td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+{{else}}
+  <p>Ishlamadi🤦‍♂️</p>
+{{/if}}
+
+{{!-- <div class="content-header">
+  {{rooms.room}}
+  aasdasd
+</div> --}}

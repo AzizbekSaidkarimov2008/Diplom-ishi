@@ -3,7 +3,7 @@
 
         <div class="malumotlar_o_l">
             <p>Ism Familyangizni va Sharf kiriting</p>
-            <input type="text" placeholder="F.I.Sh" name="name">
+            <input type="text" placeholder="F.I.Sh" name="name" required>
 
             <p>Kursizni kiriting</p>
 
@@ -14,27 +14,27 @@
                 </label>
 
                 <label>
-                    <input type="radio" name='course' id="ikki" value="1">
+                    <input type="radio" name='course' id="ikki" value="2">
                     <span>2</span>
                 </label>
 
                 <label>
-                    <input type="radio" name='course' id="uch" value="1">
+                    <input type="radio" name='course' id="uch" value="3">
                     <span>3</span>
                 </label>
 
                 <label>
-                    <input type="radio" name='course' id="tort" value="1">
+                    <input type="radio" name='course' id="tort" value="4">
                     <span>4</span>
                 </label>
             </div>
 
 
             <p>Nomeringizni kiriting</p>
-            <input type="number" placeholder="+998 ___ __ __" name="number">
+            <input type="number" placeholder="+998 ___ __ __" name="number" required>
 
             <p>Ijtimoiy holati</p>
-            <select class="select holat" name="situation">
+            <select class="select holat" name="situation" required>
                 <option value="">....</option>
 
                 <option value="chin yetim">Chin yetim</option>
@@ -46,7 +46,7 @@
 
 
             <p>Nogironlik guruhingizni tanlang</p>
-            <select class="select" name="disabled" id="">
+            <select class="select" name="disabled" id="disabled" required>
                 <option value="">.....</option>
                 <option value="yoq">Yo'q</option>
                 <option value="bir_g">1-guruh</option>
@@ -90,7 +90,7 @@
             </div>
 
             <p>Fakultet tanlang</p>
-            <select class="select" name="faculty">
+            <select class="select" name="faculty" required>
                 <option value="">....</option>
 
                 <option value="KIF">Kompyuter injiniringi: kompyuter injiniringi</option>
@@ -106,6 +106,24 @@
                 <option value="TEL">Telekommunikatsiya texnologiyalari</option>
 
                 <option value="KUT">Kutubxona-axborot faoliyati (faoliyat turlari bo`yicha)</option>
+            </select>
+
+            <select class="select" name="room" required>
+                <option value="">....</option>
+
+                <option value="100">100</option>
+
+                <option value="105">105</option>
+
+                <option value="200">200</option>
+
+                <option value="205">205</option>
+
+                <option value="213">213</option>
+
+                <option value="300">300</option>
+
+                <option value="317">317</option>
             </select>
 
             <p>Emailigizni kiriting</p>

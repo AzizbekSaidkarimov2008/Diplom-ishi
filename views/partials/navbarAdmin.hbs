@@ -50,21 +50,19 @@
         </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto navbar-navRight">
 
         <li class="nav-item">
-            <a class="nav-link nav-linkIcon" data-widget="navbar-search" data-target="#navbar-search1" href="#" role="button">
+            <a class="nav-link nav-linkIcon" data-widget="navbar-search" data-target="#navbar-search1" href="#"
+                role="button">
                 <i class="fas fa-search"></i>
             </a>
             <div class="navbar-search-block" id="navbar-search1" style="display: none;">
                 <form class="form-inline">
                     <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                            aria-label="Search" />
+                        <input class="form-control form-control-navbar" onkeyup="myFunction()" type="search"
+                            placeholder="Search" aria-label="Search" id="myInput" />
                         <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
                             <button class="btn btn-navbar nav-linkClose" type="button" data-widget="navbar-search">
                                 <i class="fas fa-times"></i>
                             </button>
@@ -81,6 +79,8 @@
         <a class="w-100 btn btn-lg btn-danger click-btn-danger" href="/auth/logout"
             style="width: 98px !important;height: 48px !important;">logout</a>
     </ul>
+    {{!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+        title="Type in a name" /> --}}
 </nav>
 
 <script>
@@ -88,11 +88,61 @@
     let noneBtn = document.querySelector('.click-btn-danger')
     let closeBtn = document.querySelector('.nav-linkClose')
 
-    iconSearch.addEventListener('click', ()=>{
+    iconSearch.addEventListener('click', () => {
         noneBtn.style.opacity = 0
         noneBtn.style.transition = .5
     })
-    closeBtn.addEventListener('click',()=>{
+    closeBtn.addEventListener('click', () => {
         noneBtn.style.opacity = 1
+        ul.style.top = '-20%'
     })
+
+
+
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        let closeSearch = document.querySelector('.nav-linkClose')
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.querySelector(".myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                ul.style.top = '0%'
+            } else {
+                li[i].style.display = "none";
+            }
+            closeSearch.addEventListener('click', () => {
+                ul.style.top = '-20%'
+            })
+        }
+    }
 </script>
+
+{{!--
+<script>
+    function myFunction() {
+        let closeSearch = document.querySelector('.nav-linkClose')
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                ul.style.top = '0%'
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+        closeSearch.addEventListener('click', () => {
+            ul.style.top = '-20%'
+        })
+    }
+</script> --}}

@@ -44,50 +44,62 @@ html {
   margin-top: 20px;
   margin-left: -400px;
   width: 60%;
-  -webkit-mask-image: -webkit-gradient(linear,
-      left top,
-      right top,
-      from(rgba(255, 255, 255, 0)),
-      color-stop(#ffffff),
-      color-stop(25%),
-      color-stop(75%, #ffffff),
-      to(rgba(255, 255, 255, 0)));
-  -webkit-mask-image: linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      #ffffff,
-      25%,
-      #ffffff 75%,
-      rgba(255, 255, 255, 0) 100%);
-  mask-image: -webkit-gradient(linear,
-      left top,
-      right top,
-      from(rgba(255, 255, 255, 0)),
-      color-stop(#ffffff),
-      color-stop(25%),
-      color-stop(75%, #ffffff),
-      to(rgba(255, 255, 255, 0)));
-  mask-image: linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      #ffffff,
-      25%,
-      #ffffff 75%,
-      rgba(255, 255, 255, 0) 100%);
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(#ffffff),
+    color-stop(25%),
+    color-stop(75%, #ffffff),
+    to(rgba(255, 255, 255, 0))
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff,
+    25%,
+    #ffffff 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(#ffffff),
+    color-stop(25%),
+    color-stop(75%, #ffffff),
+    to(rgba(255, 255, 255, 0))
+  );
+  mask-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff,
+    25%,
+    #ffffff 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .containers .home .home__in .nv ul {
   text-align: center;
-  background: -webkit-gradient(linear,
-      left top,
-      right top,
-      from(rgba(255, 255, 255, 0)),
-      color-stop(25%, rgba(255, 255, 255, 0.2)),
-      color-stop(75%, rgba(255, 255, 255, 0.2)),
-      to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.2) 25%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(25%, rgba(255, 255, 255, 0.2)),
+    color-stop(75%, rgba(255, 255, 255, 0.2)),
+    to(rgba(255, 255, 255, 0))
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.2) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
   -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1),
     inset 0 0 1px rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1),
@@ -342,10 +354,6 @@ html {
   margin: 0px 17px 30px 17px;
 }
 
-.containers .gallery .gallery__in .umumiy_r .UmumiyImg{
-  height: 287px !important;
-}
-
 .containers .gallery .gallery__in .kutubxona,
 .containers .gallery .gallery__in .sport,
 .containers .gallery .gallery__in .damolish,
@@ -354,18 +362,71 @@ html {
   display: none;
 }
 
-.containers .gallery .gallery__in .damolish .yotoqxonaImg{
+/* =============================================================== Azizbekning ozgina qo'shgan kodlari 😊👌 =================================== */
+
+.containers .gallery .gallery__in .umumiy_r .UmumiyImg {
+  height: 287px !important;
+}
+.containers .gallery .gallery__in .damolish .yotoqxonaImg {
   height: 230px !important;
 }
 
-.containers .gallery .gallery__in .damolish .yotoqxonaImg2{
+.containers .gallery .gallery__in .damolish .yotoqxonaImg2 {
   height: 287px !important;
 }
 
-table tbody tr td{
+table tbody tr td {
   color: #fff !important;
   cursor: pointer;
 }
+
+.navbar-navRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #myInput {
+  background-image: url("/css/searchicon.png");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+} */
+
+body{
+  position: relative;
+  overflow-x: hidden;
+}
+
+.myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: absolute;
+  top: -20%;
+}
+
+.myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; 
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+.myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+/* =============================================================== Azizbekning ozgina qo'shgan kodlari 😊👌 =================================== */
 
 .containers .footer {
   width: 100%;
@@ -414,7 +475,12 @@ table tbody tr td{
   list-style-type: none;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__social ul:not(:last-child) {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__social
+  ul:not(:last-child) {
   margin-right: 12px;
 }
 
@@ -436,29 +502,65 @@ table tbody tr td{
   color: #285da1;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__social ul li a.tw img {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__social
+  ul
+  li
+  a.tw
+  img {
   height: 32px;
   width: 32px;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__social ul li a.tw img:hover {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__social
+  ul
+  li
+  a.tw
+  img:hover {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
   border-color: rgba(255, 255, 255, 0);
   border-radius: 9px;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__social ul li a.pin {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__social
+  ul
+  li
+  a.pin {
   background: #d2173f;
   border-color: #d2173f;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__social ul li a.pin:hover {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__social
+  ul
+  li
+  a.pin:hover {
   background: transparent;
   color: #d2173f;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__link ul li:not(:last-child) {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__link
+  ul
+  li:not(:last-child) {
   margin-bottom: 8px;
 }
 
@@ -471,7 +573,14 @@ table tbody tr td{
   text-decoration: none;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__link ul li a:hover {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__link
+  ul
+  li
+  a:hover {
   color: #848ac5;
   text-decoration: none;
 }
@@ -484,7 +593,14 @@ table tbody tr td{
   color: #53545b;
 }
 
-.containers .footer .footer-bg .footer__widget-body .footer__link-2 ul li a:hover {
+.containers
+  .footer
+  .footer-bg
+  .footer__widget-body
+  .footer__link-2
+  ul
+  li
+  a:hover {
   color: #2b4eff;
 }
 
@@ -838,11 +954,13 @@ table tbody tr td{
   margin: auto;
   width: 100%;
   height: 100vh;
-  background: -webkit-gradient(linear,
+  background: -webkit-gradient(
+      linear,
       left top,
       right top,
       from(rgba(0, 0, 0, 0)),
-      to(rgba(0, 0, 0, 0.4))),
+      to(rgba(0, 0, 0, 0.4))
+    ),
     url("./../image/tatu.png") center, center;
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
     url("./../image/tatu.png") center, center;
@@ -909,7 +1027,7 @@ table tbody tr td{
 }
 
 .malumot form * .kurs label span:hover,
-.malumot form * .kurs input[type="radio"]:checked+span {
+.malumot form * .kurs input[type="radio"]:checked + span {
   background-color: #d6d6e5;
 }
 
@@ -926,7 +1044,7 @@ table tbody tr td{
   box-shadow: inset 0 0 0 1px #00005c;
 }
 
-.malumot form * .kurs input[type="radio"]:checked+span:before {
+.malumot form * .kurs input[type="radio"]:checked + span:before {
   -webkit-box-shadow: inset 0 0 0 5px #00005c;
   box-shadow: inset 0 0 0 5px #00005c;
 }
@@ -1074,7 +1192,12 @@ table tbody tr td{
   opacity: 0;
 }
 
-.malumot form .malumotlar_o_r .upload .round input[type="file"]::-webkit-file-upload-button {
+.malumot
+  form
+  .malumotlar_o_r
+  .upload
+  .round
+  input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
 }
 

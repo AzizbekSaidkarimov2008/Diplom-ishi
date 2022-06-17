@@ -18,7 +18,7 @@ router.get("/view", auth, async (req, res) => {
   });
 });
 
-router.get('/viewRooms', auth, async (req,res)=>{
+router.get('/viewRooms', auth, async (req, res) => {
   const rooms = await AuthRegister.find()
   res.render('admin/room', {
     rooms,
@@ -29,10 +29,12 @@ router.get('/viewRooms', auth, async (req,res)=>{
 
 // ================================================= create
 
-router.get("/", auth, (req, res, next) => {
+router.get("/", auth, async (req, res, next) => {
+  const chooseTheRoom = await AuthRegister.find()
   res.render("auth/register", {
     title: "Register",
     layout: "layout",
+    chooseTheRoom
   });
 });
 
@@ -52,6 +54,7 @@ router.post("/", auth, fileUpload.single("profileImg"), async (req, res) => {
   } = req.body;
   req.file ? (profileImg = req.file.filename) : (profileImg = "");
 
+
   const candidate = new AuthRegister({
     name,
     course,
@@ -68,6 +71,7 @@ router.post("/", auth, fileUpload.single("profileImg"), async (req, res) => {
   });
   await candidate.save();
   res.redirect("/");
+  console.log(room);
 });
 
 // ================================================= edit
@@ -144,7 +148,6 @@ router.post("/sendMail/:id", async (req, res) => {
   });
 
   res.redirect("/create/view");
-  console.log(req.body);
 });
 
 

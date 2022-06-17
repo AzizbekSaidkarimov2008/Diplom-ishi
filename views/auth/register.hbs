@@ -53,7 +53,10 @@
                 <option value="ikki_g">2-guruh</option>
                 <option value="uch_g">3-guruh</option>
             </select>
+  
 
+            <p>Doimiy yashash manzili</p>
+            <input type="text" placeholder="Doimiy yashash manzili" name="address" required>
 
             <div class="ptich">
                 <p>Ma'lumotlaringizni to'liq kiritib bo'ldingizmi</p>
@@ -63,8 +66,7 @@
         </div>
 
         <div class="malumotlar_o_r">
-            <p>Doimiy yashash manzili</p>
-            <input type="text" placeholder="Doimiy yashash manzili" name="address" required>
+
 
             <p>Jinsizni tanlang</p>
             <div class="kurs">
@@ -110,23 +112,46 @@
 
             <p>Xonangizni tanlang</p>
 
-            <select class="select" name="room" required>
+            {{!-- <select class="select" name="room" required>
                 <option value="">....</option>
-
                 <option value="100">100</option>
-
                 <option value="105">105</option>
-
                 <option value="200">200</option>
-
                 <option value="205">205</option>
-
                 <option value="213">213</option>
-
                 <option value="300">300</option>
+                <option value="317">317</option>
+            </select> --}}
 
+            <div class="kurs">
+                <label>
+                    {{!-- <input type="radio" name="room" id="room" value="100"> --}}
+                    {{!-- <a href="/chooseTheRoom" target="_blank">100</a> --}}
+                    <div class="HaveRooms">
+                        {{#if chooseTheRoom.length}}
+                        <p>Bu xonalar band</p>
+                        {{#each chooseTheRoom}}
+                        {{!-- <p>{{room}}</p> --}}
+                        <input type="radio" name="room" id="room" value="300" disabled>
+                        <span>{{room}}</span>
+
+                        {{/each}}
+                        {{else}}
+                        <p>Xonalar yo'q</p>
+                        {{/if}}
+                    </div>
+                </label>
+            </div>
+
+            <p>Bu xonalar esa bo'sh</p>
+            <select class="select" name="room" required>
+                <option value="105">105</option>
+                <option value="205">205</option>
+                <option value="213">213</option>
+                <option value="300">300</option>
                 <option value="317">317</option>
             </select>
+
 
             <p>Emailigizni kiriting</p>
             <input type="email" id="mail" name="email" required>
